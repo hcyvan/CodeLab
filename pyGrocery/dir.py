@@ -8,7 +8,9 @@ class A():
 		self.__priavate_init_instance_variable=1
 	def print_dir(self):
 		self.print_dir_instance_variable=1
-		common_print_dir_variableh=1
+		common_print_dir_variable=1
+		if common_print_dir_variable ==1:
+			pass
 		print(dir())
 
 A().print_dir()
