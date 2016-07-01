@@ -1,7 +1,7 @@
 print "############### generator ############"
-def fab(max):
+def fab(m):
     n, a, b = 0, 0, 1
-    while n < max:
+    while n < m:
         yield b
         a, b = b, a+b
         n+=1
@@ -11,8 +11,8 @@ for i in fab(5):
 
 print "############### iterator #############"
 class fab_iter(object):
-    def __init__(self, max):
-        self.max = max
+    def __init__(self, m):
+        self.max = m
         self.n, self.a, self.b = 0, 0, 1
     
     def __iter__(self):
