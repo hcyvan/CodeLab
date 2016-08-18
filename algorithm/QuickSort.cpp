@@ -9,6 +9,20 @@ int* generate_list(int n)
 	}
 	return list;
 }
+
+void quick_sort(int *list, int first, int last)
+{
+	int key=list[first];
+	while(first < last){
+		while(first < last && key <= list[last])
+			last--;
+		list[first]=list[last];
+		while(first < last && list[first] < key)
+			first++;
+		list[last]=list[first];
+	}
+	
+		
 	
 int main()
 {
