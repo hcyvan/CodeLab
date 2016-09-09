@@ -1,4 +1,5 @@
 import static java.lang.System.out;
+/* TODO */
 public class Queen{
 	private int N;
 	private int [] queen;
