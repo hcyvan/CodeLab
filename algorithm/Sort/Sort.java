@@ -36,6 +36,36 @@ public class Sort{
 			a[i]=min;
 		}
 	}
+	//-------------------- Heap Sort ---------------------
+	static void heapSort(int[] a){
+		int len=a.length;
+		// Create Heap
+		for(int i=len/2-1;i>=0;i--)
+			siftDown(a, i, len-1);
+		// Select
+		for(int i=len-1;i>=0;i--){
+			int tmp=a[i];
+			a[i]=a[0];
+			a[0]=tmp;
+			siftDown(a, 0, i-1);
+		}
+	}
+	static void siftDown(int[] a, int start, int end){
+		int key=a[start];
+		int child=start*2+1;   // left child
+		while(child<=end){
+			if(child+1<=end && a[child]<a[child+1])
+				child++;
+			if(a[start]<a[child]){
+				a[start]=a[child];
+				start=child;
+				child=start*2+1;
+			}else
+				break;
+		}
+		a[start]=key;
+	}
+	//----------------------------------------------------
 	static void bubbleSort(int[] a){
 		// 稳定 O(n*n)
 		int len=a.length;
@@ -99,7 +129,8 @@ public class Sort{
 		//selectSort(array);
 		//bubbleSort(array);
 		//quickSort(array, 0, array.length-1);
-		mergeSort(array, 0, array.length-1);
+		//mergeSort(array, 0, array.length-1);
+		heapSort(array);
 		printArray(array);
 	}
 }
