@@ -20,6 +20,24 @@ public class Sort{
 			}
 		}
 	}
+	//------------------- Shell Sort ---------------------
+	static void shellSort(int[] a){
+		int len=a.length;
+		for(int d=len/2;d>0;d/=2){
+			for(int i=d;i<len;i++){
+				int tmp=a[i];
+				int j=0;
+				for(j=i;j>=d;j-=d){
+					if(tmp<a[j-d])
+						a[j]=a[j-d];
+					else
+						break;
+				}
+				a[j]=tmp;
+			}
+		}
+	}	
+	//----------------------------------------------------
 	static void selectSort(int[] a){
 		// 不稳定 O(n*n)
 		int len=a.length;
@@ -130,7 +148,8 @@ public class Sort{
 		//bubbleSort(array);
 		//quickSort(array, 0, array.length-1);
 		//mergeSort(array, 0, array.length-1);
-		heapSort(array);
+		//heapSort(array);
+		shellSort(array);
 		printArray(array);
 	}
 }
