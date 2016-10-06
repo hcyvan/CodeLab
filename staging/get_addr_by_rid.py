@@ -62,4 +62,5 @@ if len(sys.argv)==1:
 	sys.stderr.write('RID needed\n');
 	exit()
 rid=sys.argv[1]
-print_detail(rid, ips=False)
+#print_detail(rid, ips=False)
+print_detail(rid)
