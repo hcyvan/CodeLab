@@ -15,6 +15,16 @@
 
     > mysql -h HOST -u USER -p PASSWORD;
 
+### 执行脚本
+
+    方法一, 在命令行中
+
+	mysql -u USER -p -D DATABASE < FILE.sql
+
+    方法二
+	
+	> source FILE.sql
+
 ### 用户管理
     
     创建账户
@@ -50,4 +60,7 @@
 	    > quit
 	4. 将/etc/my.cfg中的 skip-grant-tables 删除
 	5. 重启 mysql server: sudo /etc/init.d mysql restart
-    
+   
+    查看创建数据库/表时的命令
+	
+	> show create database/table NAME 
