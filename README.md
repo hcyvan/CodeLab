@@ -1,3 +1,2 @@
 # CodeLab
-Each sub directory in the repository is a pyDev object.
-excpet: sellGrocery
+我的草稿，练习测。。。
