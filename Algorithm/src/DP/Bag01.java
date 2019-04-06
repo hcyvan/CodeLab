@@ -21,6 +21,15 @@ public class Bag01 {
         }
         return Math.max(recursion(i+1,c), recursion(i+1,c-weight[i])+profit[i]);
     }
+    public int recursionMemo(int i, int c) {
+        if (i==number-1) {
+            return c < weight[i] ? 0 : profit[i];
+        }
+        if (c < weight[i]) {
+            return recursion(i+1, c);
+        }
+        return Math.max(recursion(i+1,c), recursion(i+1,c-weight[i])+profit[i]);
+    }
 
     public static void main(String[] args) {
         // 0-1背包问题
