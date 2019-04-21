@@ -1,3 +1,5 @@
+package BST;
+
 class BSTNode<T>{
     BSTNode left;
     BSTNode right;

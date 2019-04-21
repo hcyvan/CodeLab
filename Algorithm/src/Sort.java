@@ -70,6 +70,33 @@ public class Sort {
         merge(arr, tmp, 0, len - 1);
         printArray(arr);
     }
+    static void heapSort(int[] arr) {
+        for(int i=arr.length/2-1;i>=0;i--) {
+            adjustHeap(arr, i, arr.length);
+        }
+        for(int i=arr.length-1;i>0;i--){
+            int tmp=arr[i];
+            arr[i]=arr[0];
+            arr[0]=tmp;
+            adjustHeap(arr, 0, i);
+        }
+        printArray(arr);
+    }
+    static void adjustHeap(int[] arr, int s, int len) {
+        int tmp=arr[s];
+        for(int i=s*2+1;i<len;i=i*2+1) {
+            if(i+1<len && arr[i] < arr[i+1]) {
+                i++;
+            }
+            if(tmp < arr[i]) {
+                arr[s] = arr[i];
+                s=i;
+            } else {
+                break;
+            }
+        }
+        arr[s]=tmp;
+    }
     static void merge(int[] arr, int[] tmp, int low, int high) {
         if(low >= high) {
             return;
@@ -97,14 +124,21 @@ public class Sort {
     public static void main(String[] args) {
         System.out.println("hello");
         int[] input = new int[]{3,2,9,10,4,2,3,5,6,15};
+        System.out.print("Heap Sort: ");
+        heapSort(input);
+        input = new int[]{3,2,9,10,4,2,3,5,6,15};
         System.out.print("Bubble Sort: ");
         bubbleSort(input);
+        input = new int[]{3,2,9,10,4,2,3,5,6,15};
         System.out.print("Quick Sort: ");
         quickSort(input);
+        input = new int[]{3,2,9,10,4,2,3,5,6,15};
         System.out.print("Insert Sort: ");
         insertSort(input);
+        input = new int[]{3,2,9,10,4,2,3,5,6,15};
         System.out.print("Select Sort: ");
         selectSort(input);
+        input = new int[]{3,2,9,10,4,2,3,5,6,15};
         System.out.print("Merge Sort: ");
         mergeSort(input);
     }

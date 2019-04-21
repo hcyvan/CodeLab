@@ -1,3 +1,5 @@
+import java.net.InetAddress;
+
 class Solution {
     public String longestPalindrome(String s) {
         int n=s.length();
@@ -25,11 +27,14 @@ class Solution {
 }
 
 public class Test {
-    public static void main(String[] str) {
-        Solution s=new Solution();
-        String ss=s.longestPalindrome("babad");
-        System.out.println(ss);
-        ss=s.longestPalindrome("aab");
-        System.out.println(ss);
+    public static void main(String[] str) throws Exception{
+        int timeout=1000;
+        for (int i=1;i<254;i++){
+            String host="192.168.56" + "." + i;
+            System.out.println(InetAddress.getByName(host).getAddress());
+            if (InetAddress.getByName(host).isReachable(timeout)){
+                System.out.println(host + " is reachable");
+            }
+        }
     }
 }
