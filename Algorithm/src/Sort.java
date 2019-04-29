@@ -74,7 +74,7 @@ public class Sort {
         for(int i=arr.length/2-1;i>=0;i--) {
             adjustHeap(arr, i, arr.length);
         }
-        for(int i=arr.length-1;i>0;i--){
+        for(int i=arr.length-1;i>=0;i--){
             int tmp=arr[i];
             arr[i]=arr[0];
             arr[0]=tmp;
@@ -85,11 +85,11 @@ public class Sort {
     static void adjustHeap(int[] arr, int s, int len) {
         int tmp=arr[s];
         for(int i=s*2+1;i<len;i=i*2+1) {
-            if(i+1<len && arr[i] < arr[i+1]) {
+            if(i+1<len && arr[i] > arr[i+1]) {
                 i++;
             }
-            if(tmp < arr[i]) {
-                arr[s] = arr[i];
+            if(arr[s] < arr[i]) {
+                arr[i] = arr[s];
                 s=i;
             } else {
                 break;
@@ -126,19 +126,14 @@ public class Sort {
         int[] input = new int[]{3,2,9,10,4,2,3,5,6,15};
         System.out.print("Heap Sort: ");
         heapSort(input);
-        input = new int[]{3,2,9,10,4,2,3,5,6,15};
         System.out.print("Bubble Sort: ");
         bubbleSort(input);
-        input = new int[]{3,2,9,10,4,2,3,5,6,15};
         System.out.print("Quick Sort: ");
         quickSort(input);
-        input = new int[]{3,2,9,10,4,2,3,5,6,15};
         System.out.print("Insert Sort: ");
         insertSort(input);
-        input = new int[]{3,2,9,10,4,2,3,5,6,15};
         System.out.print("Select Sort: ");
         selectSort(input);
-        input = new int[]{3,2,9,10,4,2,3,5,6,15};
         System.out.print("Merge Sort: ");
         mergeSort(input);
     }
