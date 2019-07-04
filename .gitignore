@@ -3,4 +3,4 @@ out/
 venv/
 .DS_Store
 *.iml
-cmake-build-debug/*
+cmake-build-debug/
